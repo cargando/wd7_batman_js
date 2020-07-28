@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>TV Maze Shows</title>
-	<script src="/js/utils.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<link rel="stylesheet" href="/css/styles.css">
@@ -22,10 +21,10 @@
 				<div class="form-row align-items-center">
 					<div class="col-auto">
 						<label class="sr-only" for="inlineFormInput">Искать show</label>
-						<input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Название выпуска">
+						<input id="searchText" type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Название выпуска">
 					</div>
 					<div class="col-auto">
-						<button type="submit" class="btn btn-primary mb-2">Search</button>
+						<button id="searchButton" type="button" class="btn btn-primary mb-2">Search</button>
 					</div>
 					<div class="col-md-7">
 						<div style="display: flex; justify-content: flex-end">
@@ -96,6 +95,6 @@
 
 
 
-
+<script src="/js/utils.js"></script>
 </body>
 </html>
