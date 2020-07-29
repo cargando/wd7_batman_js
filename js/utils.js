@@ -1,17 +1,39 @@
 
 const STATE = {
   timer: null,
+  customEventSwitch: new Event("customEventSwitch"),
 }
+
+
 
 document.getElementById('searchText').addEventListener('keypress', waitUserInput)
 
 document.getElementById('searchButton').addEventListener('click', searchShow);
-document.getElementById('viewType').addEventListener('click', function (e) {
+document.getElementById('viewType').addEventListener('click', handleViewTypeClick)
 
+document.getElementById('pageContainer').addEventListener("customEventSwitch", handleChangeHeader)
+
+
+function handleChangeHeader(e) {
+  console.log("customEventSwitch:: ", e);
+}
+
+function handleViewTypeClick() {
+
+
+  const res  = document.getElementById('searchText').dispatchEvent(STATE.customEventSwitch);
+  console.log("res:: ", res);
+
+  changeVeiw(this.checked);
+}
+
+
+
+function changeVeiw(status) {
   const table = document.getElementById('showList')
   const cards = document.getElementById('cardsList')
 
-  if (this.checked) { // если переключатель показывает на карточки, тогда
+  if (status) { // если переключатель показывает на карточки, тогда
     cards.style.display = 'block'; // показать карточки
     table.style.display = 'none'; // скрыть таблицу
   } else { // в противном случае наоборот
@@ -21,8 +43,7 @@ document.getElementById('viewType').addEventListener('click', function (e) {
 
   console.log('checkbox', )
 
-})
-
+}
 
 function waitUserInput() {
   const searchText = document.getElementById('searchText');
