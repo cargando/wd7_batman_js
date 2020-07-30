@@ -1,7 +1,7 @@
 
 const STATE = {
   timer: null,
-  customEventSwitch: new Event("customEventSwitch"),
+  customEventSwitch: new Event("customEventSwitch", {bubbles: true}),
 }
 
 
