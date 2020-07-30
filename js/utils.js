@@ -15,6 +15,7 @@ document.getElementById('pageContainer').addEventListener("customEventSwitch", h
 
 
 function handleChangeHeader(e) {
+  document.getElementById('headerShowText').innerText = document.getElementById('searchText').value;
   console.log("customEventSwitch:: ", e);
 }
 
